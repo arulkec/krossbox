@@ -1,0 +1,44 @@
+// Padding and margin Simple mixin
+@mixin spacing($name,$side,$value1: "",$value2: "",$value3: "",$value4: "") {
+    @if $side == 'same' {
+        #{$name}: $value1;
+    }
+    @else if $side =='both' {
+        #{$name}: $value1 $value2;
+    }
+    @else if $side =='diff' {
+        #{$name}: $value1 $value2 $value3 $value4;
+    }
+    @else if($side =='left' or $side =='right' or $side =='top' or $side =='bottom') {
+        #{$name}-#{$side}: $value1;
+    }
+}
+
+// Shadow Mixin
+@mixin shadow($size: 1) {
+    @if $size ==1 {
+        box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    @else if $size ==2 {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    @else if $size ==3 {
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    @else if $size ==4 {
+        box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    @else if $size ==5 {
+        box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+}
+
+// Common Extent Plugin
+%box-border {
+    box-sizing: border-box !important;
+}

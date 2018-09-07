@@ -1,0 +1,46 @@
+
+$choose-color: ''; //blue | red | green
+$theme-color: #49AE7E;
+$theme-second-color: #3aa7dd;
+$header-color: #2A2D33 !default;
+$white-color: #ffffff !default;
+$disabled-gray: rgba(0,0,0,0.4);
+$light-gray: #e0e0e0;
+$dark-gray: #727272;
+$black-color: #212121;
+$red-color: #FD0000 !default;
+$orange-color: #FECB00 !default;
+$green-color: #11B222;
+$yellow-color: #ffff00;
+$grey-color: #808080;
+$indigo-color: #4B0082;
+$tan-color: #D2B48C;
+$fb-color: #4867AA;
+$gp-color: #DD4E43;
+$yelp-color: #BF2519;
+$lochmara-color: #0487C4 !default;
+$shadow: 1 2 3 4 5;
+$spacing: 0 5 10 15 20 25 30;
+$create-font: 10 12 14 16 18 20 22 24 26 28 30 50 46;
+$width: 100 50 25 80 20;
+$height: 100 50 25;
+
+@if $choose-color == '' {
+    $theme-color: #49AE7E;
+    $theme-second-color: #3aa7dd;
+}
+@else if $choose-color == 'blue' {
+    $theme-color: #49AE7E;
+    $theme-second-color: #3aa7dd;
+}
+@else if $choose-color == 'red' {
+    $theme-color: #800000;
+    $theme-second-color: #b20000;
+}
+@else if $choose-color == 'green' {
+    $theme-color: #259b24;
+    $theme-second-color: #8bc34a;
+}
+
+
+

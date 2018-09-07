@@ -1,0 +1,428 @@
+
+/**
+    * Variables
+    * Mixins
+    * Common CSS
+    * Home Page Section
+    * Footer Section
+**/
+
+/* Variables
+---------------------------------------------------------------*/
+@import "assets/variables";
+//----------------------------------------------------------------------------------------------------------------------------------------------
+/* Mixins
+---------------------------------------------------------------*/
+@import "assets/mixins";
+
+/* Common CSS
+---------------------------------------------------------------*/
+@each $space in $spacing {
+    .p#{$space} {
+        @include spacing(padding,same,$space+px);
+        @extend %box-border;
+    }
+
+    .ptb#{$space} {
+        @include spacing(padding,both,$space+px,0);
+        @extend %box-border;
+    }
+
+    .plr#{$space} {
+        @include spacing(padding,both,0,$space+px);
+        @extend %box-border;
+    }
+
+    .pt#{$space} {
+        @include spacing(padding,top,$space+px);
+        @extend %box-border;
+    }
+
+    .pb#{$space} {
+        @include spacing(padding,bottom,$space+px);
+        @extend %box-border;
+    }
+
+    .pl#{$space} {
+        @include spacing(padding,left,$space+px);
+        @extend %box-border;
+    }
+
+    .pr#{$space} {
+        @include spacing(padding,right,$space+px);
+        @extend %box-border;
+    }
+
+    .m#{$space} {
+        @include spacing(margin,same,$space+px);
+    }
+
+    .mtb#{$space} {
+        @include spacing(margin,both,$space+px,0);
+    }
+
+    .mlr#{$space} {
+        @include spacing(margin,both,0,$space+px);
+    }
+
+    .mt#{$space} {
+        @include spacing(margin,top,$space+px);
+    }
+
+    .mb#{$space} {
+        @include spacing(margin,bottom,$space+px);
+    }
+
+    .ml#{$space} {
+        @include spacing(margin,left,$space+px);
+    }
+
+    .mr#{$space} {
+        @include spacing(margin,right,$space+px);
+    }
+}
+
+@each $font in $create-font {
+    .f#{$font} {
+        font-size: $font+px;
+    }
+}
+
+@each $width in $width {
+    .w#{$width} {
+        width: $width+%;
+    }
+}
+
+@each $height in $height {
+    .h#{$height} {
+        height: $height+px;
+    }
+}
+
+@each $sdw in $shadow {
+    $i: index($shadow,$sdw);
+
+    .sdw#{$sdw} {
+        @include shadow($i);
+    }
+}
+
+.facebook-color {
+    color: #44619d;
+}
+
+.twitter-color {
+    color: #1da1f3;
+}
+
+.instagram-color {
+    color: #000;
+}
+
+.linkedin-color {
+    color: #007bb6;
+}
+
+.google-plus-color {
+    color: #dd4d42
+}
+
+.white-color {
+    color: #fff;
+}
+
+.red-color {
+    color: #f4364c;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #f9eded;
+    border-radius: 0.3rem;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px;
+}
+/* Home Page Section
+---------------------------------------------------------------*/
+.home-page {
+
+
+
+    .page-title {
+        position: relative;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .parallax .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(73, 174, 126, 0.9); /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(-90deg, rgba(73, 174, 126, 0.9), rgba(44, 62, 80, 0.9)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(-90deg, rgba(73, 174, 126, 0.9), rgba(44, 62, 80, 0.9)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(-90deg, rgba(73, 174, 126, 0.9), rgba(44, 62, 80, 0.9)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(-90deg, rgba(73, 174, 126, 0.9), rgba(44, 62, 80, 0.9)); /* Standard syntax */
+    }
+
+    .parallax .container {
+        position: relative;
+        z-index: 2;
+        left: auto;
+        top: auto;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .parallax1 .container {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 25%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .parallax {
+        width: 100%;
+        background-attachment: fixed;
+        background-position: 100% 0;
+        background-size: cover;
+    }
+
+    .slider-section {
+
+        .slider-images {
+            width: 100%;
+            height: 674px;
+        }
+
+        .slide {
+            position: relative;
+        }
+
+        .page-title-heading {
+            font-family: 'Playfair Display';
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 72px;
+            margin-bottom: 10px;
+        }
+
+        .home-banner-slide {
+            position: absolute;
+            bottom: 29px;
+            list-style: none;
+            display: block;
+            text-align: center;
+            padding: 0;
+            width: 25%;
+
+            li.slick-active button:before {
+                color: #ffffff;
+                opacity: 0.75;
+            }
+
+            li {
+                position: relative;
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                margin: 0 5px;
+                padding: 0;
+                cursor: pointer;
+
+                button {
+                    border: 0;
+                    background: transparent;
+                    display: block;
+                    height: 20px;
+                    width: 20px;
+                    outline: none;
+                    line-height: 0;
+                    font-size: 0;
+                    color: transparent;
+                    padding: 5px;
+                    cursor: pointer;
+                }
+
+                button:before {
+                    font-weight: bold;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "\00b0";
+                    width: 20px;
+                    height: 20px;
+                    font-family: "slick";
+                    font-size: 45px;
+                    line-height: 20px;
+                    text-align: center;
+                    color: #ffffff;
+                    opacity: 0.25;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+            }
+        }
+    }
+}
+
+.header-page {
+
+    .header-section {
+        .navbar {
+            background: #ecad75;
+            height: 56px;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: 50px
+        }
+
+        .ant-menu.ant-menu-horizontal {
+            height: 52px;
+
+            .ant-menu-item {
+                text-align: center;
+            }
+        }
+
+        .ant-menu.ant-menu-horizontal, .ant-menu-vertical {
+            background: #ecad75;
+            border: none;
+            border-bottom: none;
+            text-transform: uppercase;
+
+            .ant-menu-item {
+                border: none;
+            }
+
+            .ant-menu-item-selected, .ant-menu-item-active {
+                border: none;
+
+                a {
+                    color: #FFFFFF;
+                    background: none repeat scroll 0 0 #f4364c;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        @media only screen and (max-width : 768px) {
+            .navbar-brand {
+                padding-left: 20px;
+            }
+        }
+
+        .collapse, .collapsing {
+            z-index: 9999;
+
+            .ant-menu {
+                width: 200px;
+                float: right;
+            }
+        }
+    }
+}
+
+.search-index-list {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.marker-index {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.over-flow {
+    height: 680px;
+    overflow: scroll;
+}
+
+.loctaion-icon {
+    position: absolute;
+    z-index: 2000;
+    top: 7%;
+    left: 0%;
+    padding-left: 15px;
+    color: #ecad75;
+    font-size: 20px;
+}
+
+.detect-icon {
+    color: #87878f;
+    padding-top: 2px;
+}
+
+.detect-text {
+    position: absolute;
+    top: -32%;
+    left: 83%;
+    z-index: 2000;
+    display: flex;
+}
+.show-map {
+    color: #007bff;
+    font-size: 12px;
+}
+
+.location-detail {
+    padding: 10px;
+    font-size: 17px;
+}
+
+.map-marker-window {
+    width: 300px;
+    overflow: hidden;
+    align-content: center;
+    padding: 13px 0px 0px 0px;
+}
+
+.location-address-style {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.header-search {
+    padding-top: 34px;
+}
+
+.search-detect-icon {
+    color: #87878f;
+    padding-top: 2px;
+    font-size: 22px;
+ }
+ 
+ .search-detect-text {
+    position: absolute;
+    top: -86%;
+    left: 85%;
+    z-index: 2000;
+    display: flex;
+    padding: 10px;
+ }
