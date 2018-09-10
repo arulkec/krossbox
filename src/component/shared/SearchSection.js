@@ -138,7 +138,7 @@ class SearchSection extends React.Component {
                             placeholder={"Select Location"}
                             style={{ width: '100%', padding: '0px 20px 0px 45px', borderRadius: '3px', border: 'none' }}
                             locationType="(regions)"
-                            googleAPIKey="AIzaSyA1V1tEY0c20Vp2HuJl0JsssFIZUOLnbO8"
+                            googleAPIKey=""
                             onDropdownSelect={this.onDropdownSelect}
                         />
                         )}
